@@ -1,0 +1,7 @@
+Controllers\LetterCountController.class
+Models\CharacterCounter.class
+Models\LetterCount.class
+Controllers\CountCharacterController.class
+Views\CountCharacterView.class
+Controllers\Main.class
+Views\LetterCountView.class

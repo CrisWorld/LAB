@@ -1,0 +1,8 @@
+Controllers\StudentManagement.class
+Models\Course.class
+Models\Student.class
+Views\FormView.class
+Views\ReportView.class
+Models\Validator.class
+Controllers\Main.class
+Views\Menu.class
