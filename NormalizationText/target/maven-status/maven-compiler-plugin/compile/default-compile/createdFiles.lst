@@ -1,0 +1,4 @@
+views\ShowingView.class
+models\FileInteraction.class
+com\mycompany\normalizationtext\NormalizationText.class
+controllers\MainController.class
