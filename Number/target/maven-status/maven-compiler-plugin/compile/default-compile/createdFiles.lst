@@ -1,0 +1,8 @@
+models\SimpleEquation.class
+models\QuadraticEquation.class
+com\mycompany\number\Menu.class
+com\mycompany\number\Number.class
+view\ResultView.class
+controllers\MainController.class
+com\mycompany\number\Validator.class
+view\Information.class
