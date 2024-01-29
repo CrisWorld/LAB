@@ -1,0 +1,8 @@
+model\Menu.class
+view\HomeView$1.class
+model\Contact.class
+model\ContactService.class
+util\ValidationUtil.class
+view\HomeView.class
+controller\ContactController.class
+controller\ContactManagement.class
