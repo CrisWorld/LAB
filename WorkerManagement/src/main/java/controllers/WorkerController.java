@@ -4,6 +4,9 @@
  */
 package controllers;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import models.Worker;
 import models.WorkerHash;
 import views.GeneralView;
 
@@ -14,21 +17,19 @@ import views.GeneralView;
 public class WorkerController extends Menu{
     private WorkerHash wHash;
     
-    public WorkerController(){
+    public WorkerController(String title, String[] options){
+        super(title, options);
         wHash = new WorkerHash();
-    }
-    
-    public WorkerController(WorkerHash wHash) {
-        this.wHash = wHash;
     }
     
     public void addWorker(){
         GeneralView view = new GeneralView();
-//        Worker worker = view.getWorker();
+        Worker worker = view.getWorker();
         try{
-//        wHash.checkWorkerExistence(worker.getCode());
-            wHash.addWorker(worker);
+            if(wHash.getWorkerByCode(worker.getCode()) == null) wHash.addWorker(worker);
+            else throw new Exception();
         } catch(Exception e){
+            System.out.println(e.getMessage());
             view.displayMessage("Worker was existed in database!");
         }
     }
@@ -36,25 +37,26 @@ public class WorkerController extends Menu{
     public void upSalary(){
         GeneralView view = new GeneralView();
         try{
-//        Code code = view.getCode();
-//        wHash.checkWorkerExistence(code);
-//        Worker worker = wHash.getWorkerByCode(code);
-//        double salary = view.getUpSalary();
-//        if(salary <= worker.getSalary) view.showMessage("Error Salary");
-//        else worker.setSalary(salary);
+        String code = view.getCode();
+        wHash.checkWorkerExistence(code);
+        Worker worker = wHash.getWorkerByCode(code);
+        double salary = view.getUpSalary();
+        if(salary <= worker.getSalary()) view.displayMessage("Error Salary");
+        else worker.changeSalary(salary);
         } catch(Exception e){
-            view.displayMessage("Worker was existed in database!");
+            System.out.println(e.getMessage());
+            view.displayMessage("Worker doesn't exist in database!");
         }
     }
     public void downSalary(){
         GeneralView view = new GeneralView();
         try{
-//        Code code = view.getCode();
-//        wHash.checkWorkerExistence(code);
-//        Worker worker = wHash.getWorkerByCode(code);
-//        double salary = view.getUpSalary();
-//        if(salary >= worker.getSalary) view.showMessage("Error Salary");
-//        else worker.setSalary(salary);
+        String code = view.getCode();
+        wHash.checkWorkerExistence(code);
+        Worker worker = wHash.getWorkerByCode(code);
+        double salary = view.getDownSalary();
+        if(salary >= worker.getSalary()) view.displayMessage("Error Salary");
+        else worker.changeSalary(salary);
         } catch(Exception e){
             view.displayMessage("Worker was existed in database!");
         }
@@ -74,10 +76,22 @@ public class WorkerController extends Menu{
                break;
            case 4:
                GeneralView view = new GeneralView();
-               view.displayInformationSalary(wHash.getWorkerArrayList());
+                try {
+                    view.displayInformationSalary(wHash.getWorkerArrayList());
+                } catch (Exception ex) {
+                    Logger.getLogger(WorkerController.class.getName()).log(Level.SEVERE, null, ex);
+                }
                break;
+
            default:
                System.exit(0);
        }
     }
+    
+    public static void main(String[] args) {
+        String title = "======== Worker Management =========";
+        String[] options = {"Add Worker", "Up Salary", "Down Salary", "Display Information Salary", "Exit"};
+        WorkerController c = new WorkerController(title, options);
+        c.run();
+    }   
 }

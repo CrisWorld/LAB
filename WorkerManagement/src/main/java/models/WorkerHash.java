@@ -13,22 +13,21 @@ public class WorkerHash {
     private HashMap<String, Worker> workerMap;
 
     public WorkerHash() {
-        this.workerMap = new HashMap<>();
+        this.workerMap = new HashMap<String, Worker>();
         initData();
     }
     
     public void initData(){
-        
-        workerMap.put("001", new Worker("001", "Nguyen Hoang Quoc", "VietNam", 1000));
-        workerMap.put("002", new Worker("002", "Tran Thi Anh", "VietNam", 1200));
-        workerMap.put("003", new Worker("003", "John Smith", "USA", 1500));
-        workerMap.put("004", new Worker("004", "Maria Rodriguez", "Spain", 1100));
-        workerMap.put("005", new Worker("005", "Li Wei", "China", 1300));
-        workerMap.put("006", new Worker("006", "Yuki Tanaka", "Japan", 1600));
-        workerMap.put("007", new Worker("007", "Anna Petrova", "Russia", 1400));
-        workerMap.put("008", new Worker("008", "Ahmed Mahmoud", "Egypt", 900));
-        workerMap.put("009", new Worker("009", "Luisa Martinez", "Mexico", 1000));
-        workerMap.put("010", new Worker("010", "Kumar Singh", "India", 1100));
+        workerMap.put("001", new Worker("001", "Nguyen Hoang Quoc", "VietNam", 1000, 18));
+        workerMap.put("002", new Worker("002", "Tran Thi Anh", "VietNam", 1200, 20));
+        workerMap.put("003", new Worker("003", "John Smith", "USA", 1500, 30));
+        workerMap.put("004", new Worker("004", "Maria Rodriguez", "Spain", 1100, 40));
+        workerMap.put("005", new Worker("005", "Li Wei", "China", 1300, 20));
+        workerMap.put("006", new Worker("006", "Yuki Tanaka", "Japan", 1600, 20));
+        workerMap.put("007", new Worker("007", "Anna Petrova", "Russia", 1400, 20));
+        workerMap.put("008", new Worker("008", "Ahmed Mahmoud", "Egypt", 900, 20));
+        workerMap.put("009", new Worker("009", "Luisa Martinez", "Mexico", 1000, 20));
+        workerMap.put("010", new Worker("010", "Kumar Singh", "India", 1100, 20));
     }
 
     public boolean addWorker(Worker worker) throws Exception {
@@ -48,9 +47,7 @@ public class WorkerHash {
     
     public Worker getWorkerByCode(String code) throws Exception{
         checkDatabaseExistence();
-        checkWorkerExistence(code);
         Worker worker = workerMap.get(code);
-        if(worker == null) throw new Exception("Data doesn't exist");
         return worker;
     }
     

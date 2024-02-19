@@ -4,6 +4,7 @@
  */
 package models;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
@@ -12,14 +13,16 @@ import java.util.ArrayList;
  */
 public class Worker {
     private String name, code, workLocation;
-    private double salaray;
+    private int age;
+    private double salary;
     private ArrayList<History> histories;
     
-    public Worker(String code, String name, String workLocation, double salaray) {
+    public Worker(String code, String name, String workLocation, double salaray, int age) {
         this.name = name;
         this.code = code;
+        this.age = age;
         this.workLocation = workLocation;
-        this.salaray = salaray;
+        this.salary = salaray;
         histories = new ArrayList<History>();
     }
     
@@ -48,14 +51,20 @@ public class Worker {
     }
     
     public void changeSalary(double salary){
-        this.salaray = salary;
+        histories.add(new History(LocalDate.now(), salary, salary > this.salary ? "UP" : "DOWN"));
+        this.salary = salary;
     }
     
-    public double getSalaray() {
-        return salaray;
+    public double getSalary() {
+        return salary;
     }
 
     public ArrayList<History> getInformationHistory() {
         return this.histories;
     }
+
+    public int getAge() {
+        return age;
+    }
+    
 }
