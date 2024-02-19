@@ -9,5 +9,8 @@ package models;
  * @author quoch
  */
 public class Worker {
+
+    public Worker(String code, String name, String age, String salary, String worklocation) {
+    }
     
 }
