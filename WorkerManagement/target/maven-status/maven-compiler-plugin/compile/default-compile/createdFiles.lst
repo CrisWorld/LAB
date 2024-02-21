@@ -1,0 +1,7 @@
+controllers\Menu.class
+models\WorkerHash.class
+models\History.class
+com\mycompany\workermanagement\Validator.class
+views\GeneralView.class
+controllers\WorkerController.class
+models\Worker.class

@@ -4,37 +4,34 @@
  */
 package models;
 
-import java.time.LocalDate;
-
 /**
  *
  * @author quoch
  */
-public class History {
-    private String status;
-    private LocalDate date;
+public class Person {
+    private String name, address;
     private double salary;
 
-    public History(LocalDate date, double salary, String status) {
-        this.status = status;
-        this.date = date;
+    public Person(String name, String address, double salary) {
+        this.name = name;
+        this.address = address;
         this.salary = salary;
     }
 
-    public String getStatus() {
-        return status;
+    public String getName() {
+        return name;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public String getAddress() {
+        return address;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setAddress(String address) {
+        this.address = address;
     }
 
     public double getSalary() {
@@ -44,4 +41,5 @@ public class History {
     public void setSalary(double salary) {
         this.salary = salary;
     }
+    
 }
