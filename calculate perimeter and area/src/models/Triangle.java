@@ -2,10 +2,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Views;
+package models;
 
-import calculate.perimeter.and.area.Shape;
-import calculate.perimeter.and.area.Shape;
+import models.Shape;
+import models.Shape;
 
 /**
  *
@@ -40,7 +40,7 @@ public class Triangle extends Shape {
 
     @Override
     public void printResult() {
-        System.out.println("-----Triangle-----1");
+        System.out.println("-----Triangle-----");
         System.out.println("Side A: " + this.a);
         System.out.println("Side B: " + this.b);
         System.out.println("Side C: " + this.c);

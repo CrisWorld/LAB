@@ -1,27 +1,21 @@
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package calculate.perimeter.and.area;
+package Views;
 
-
-import Views.Triangle;
-import Views.Circle;
-import Views.Rectangle;
 import java.util.Scanner;
-
+import models.Circle;
+import models.Rectangle;
+import models.Triangle;
 
 /**
  *
- * @author sewrf
+ * @author quoch
  */
-
-
-public class Main {
-
-    private static final Scanner in = new Scanner(System.in);
-
-    private static double checkInputDouble() {
+public class GeneralView {
+    public double checkInputDouble() {
+        Scanner in = new Scanner(System.in);
         while (true) {
             try {
                 double result = Double.parseDouble(in.nextLine());
@@ -32,7 +26,7 @@ public class Main {
         }
     }
 
-    private static Triangle inputTriangle() {
+    public Triangle inputTriangle() {
         while (true) {
             System.out.print("Please input side A of Triangle: ");
             double a = checkInputDouble();
@@ -49,7 +43,7 @@ public class Main {
 
     }
 
-    private static Rectangle inputRectangle() {
+    public Rectangle inputRectangle() {
         System.out.print("Please input side width of Rectangle: ");
         double width = checkInputDouble();
         System.out.print("Please input length of Rectangle: ");
@@ -57,26 +51,9 @@ public class Main {
         return new Rectangle(width, length);
     }
 
-    private static Circle inputCircle() {
+    public Circle inputCircle() {
         System.out.print("Please input radius of Circle: ");
         double radius = checkInputDouble();
         return new Circle(radius);
     }
-
-    private static void display(Triangle trigle, Rectangle rectangle, Circle circle) {
-        rectangle.printResult();
-        circle.printResult();
-        trigle.printResult();
-    }
-
-    
-    public static void main(String[] args) {
-        System.out.println("=====Calculator Shape Program=====");
-        Rectangle rectangle = inputRectangle();
-        Circle circle = inputCircle();
-        Triangle trigle = inputTriangle();
-
-        display(trigle, rectangle, circle);
-    }
-    
 }
