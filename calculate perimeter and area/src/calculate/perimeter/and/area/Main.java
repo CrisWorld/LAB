@@ -1,11 +1,36 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package calculate.perimeter.and.area;
 
+
+import Views.Triangle;
+import Views.Circle;
+import Views.Rectangle;
 import java.util.Scanner;
+
 
 /**
  *
- * @author THAYCACAC
+ * @author sewrf
  */
+
+
 public class Main {
+
+    private static final Scanner in = new Scanner(System.in);
+
+    private static double checkInputDouble() {
+        while (true) {
+            try {
+                double result = Double.parseDouble(in.nextLine());
+                return result;
+            } catch (NumberFormatException e) {
+                System.err.println("Re-input");
+            }
+        }
+    }
 
     private static Triangle inputTriangle() {
         while (true) {
@@ -24,7 +49,13 @@ public class Main {
 
     }
 
-c
+    private static Rectangle inputRectangle() {
+        System.out.print("Please input side width of Rectangle: ");
+        double width = checkInputDouble();
+        System.out.print("Please input length of Rectangle: ");
+        double length = checkInputDouble();
+        return new Rectangle(width, length);
+    }
 
     private static Circle inputCircle() {
         System.out.print("Please input radius of Circle: ");
@@ -38,11 +69,14 @@ c
         trigle.printResult();
     }
 
+    
     public static void main(String[] args) {
+        System.out.println("=====Calculator Shape Program=====");
         Rectangle rectangle = inputRectangle();
         Circle circle = inputCircle();
         Triangle trigle = inputTriangle();
 
         display(trigle, rectangle, circle);
     }
+    
 }

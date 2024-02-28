@@ -1,8 +1,0 @@
-models\Person.class
-controllers\FileController.class
-models\FileHandler.class
-controllers\PersonInfoController.class
-controllers\MainController.class
-com\mycompany\fileprocessing\Menu.class
-com\mycompany\fileprocessing\FileProcessing.class
-view\GeneralView.class
