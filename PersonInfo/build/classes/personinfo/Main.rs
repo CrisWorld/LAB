@@ -1,3 +1,0 @@
-personinfo.PersonWrapper
-personinfo.Main
-personinfo.PersonInfo
