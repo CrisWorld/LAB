@@ -1,0 +1,6 @@
+models\Person.class
+controllers\Menu.class
+views\PersonView.class
+controllers\PersonController.class
+com\mycompany\personinfo\PersonInfo.class
+controllers\MainController.class
