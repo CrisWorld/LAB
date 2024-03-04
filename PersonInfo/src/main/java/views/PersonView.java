@@ -4,7 +4,6 @@
  */
 package views;
 
-import static controllers.PersonController.sortBySalary;
 import java.util.Scanner;
 import models.Person;
 

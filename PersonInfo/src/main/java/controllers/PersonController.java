@@ -31,7 +31,7 @@ public class PersonController {
     }
     
     // Bubble sort for sorting persons by salary
-    public static Person[] sortBySalary(Person[] persons) {
+    public Person[] sortBySalary(Person[] persons) {
         int n = persons.length;
         for (int i = 0; i < n - 1; i++) {
             for (int j = 0; j < n - i - 1; j++) {
