@@ -1,0 +1,4 @@
+views\StringAnalyzerView.class
+com\mycompany\analysisstring\AnalysisString.class
+controllers\StringAnalyzerController.class
+models\StringAnalyzer.class
