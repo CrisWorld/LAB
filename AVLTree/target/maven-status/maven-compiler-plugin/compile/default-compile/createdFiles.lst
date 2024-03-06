@@ -1,3 +1,5 @@
-com\mycompany\avltree\Contact.class
-com\mycompany\avltree\Node.class
+com\mycompany\avltree\Menu.class
 com\mycompany\avltree\AVLTree.class
+com\mycompany\avltree\Plannet.class
+com\mycompany\avltree\Node.class
+com\mycompany\avltree\AVLTree$Menu.class

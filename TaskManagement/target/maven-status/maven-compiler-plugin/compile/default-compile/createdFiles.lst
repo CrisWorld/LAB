@@ -1,0 +1,8 @@
+models\TaskManager.class
+controllers\Menu.class
+controllers\TaskController.class
+controllers\MainController.class
+common\Validator.class
+models\TaskType.class
+models\Task.class
+views\TaskView.class

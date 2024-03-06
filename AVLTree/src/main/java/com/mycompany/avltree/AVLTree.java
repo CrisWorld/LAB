@@ -11,44 +11,6 @@ import java.util.Scanner;
  *
  * @author quoch
  */
-abstract class Menu<T> {
-    protected String title;
-    protected ArrayList<T> mChon;
-    
-    public Menu(){}
-    
-    public Menu(String td, String[] mc){
-        title=td;
-        mChon= new ArrayList<>();
-        for(String s:mc) mChon.add((T) s);
-    }
-//-------------------------------------------
-    public void display(){
-        System.out.println(title);
-        System.out.println("--------------------------------");
-        for(int i=0; i<mChon.size();i++)
-            System.out.println((i+1)+"."+mChon.get(i));
-        System.out.println("--------------------------------");
-    }
-//-------------------------------------------
-    public int getSelected(){
-        display();
-        Scanner sc= new Scanner(System.in);
-        System.out.print("Enter selection..");
-        return sc.nextInt();
-    }
-//-------------------------------------------
-    public abstract void execute(int n);
-//-------------------------------------------
-    public void run(){
-        while(true){
-            int n=getSelected();
-            execute(n);
-            if(n>mChon.size()) break;
-        }
-    }
-//-------------------------------------------    
-}
 class Plannet{
     private String name;
     private double mass, ed, au, jy;
@@ -207,8 +169,10 @@ public class AVLTree {
         
         if (name.compareTo(node.getKey()) < 0) {
             node.left = delete(node.left, name);
+//            return node;
         } else if (name.compareTo(node.getKey()) > 0) {
             node.right = delete(node.right, name);
+//            return node;
         } else {
             // Node with the key found, perform deletion
 
@@ -349,5 +313,6 @@ public class AVLTree {
         avlTree.insert(new Plannet("Saturn", 9.449, 95.16, 9.54, 29.45));
         avlTree.insert(new Plannet("Uranus", 4.007, 14.54, 19.19, 84.02));
         avlTree.insert(new Plannet("Saturn", 3.883, 17.15, 30.07, 164.79));
+        avlTree.inorder();
     }
 }
