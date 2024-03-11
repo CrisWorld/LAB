@@ -34,7 +34,7 @@ class Graph {
         Edge edge = new Edge(source, destination, weight);
         adjacencyList.get(source).add(edge);
 
-//         For undirected graph, add the reverse edge
+//      đồ thị vô hướng
         edge = new Edge(destination, source, weight);
         adjacencyList.get(destination).add(edge);
     }
@@ -80,7 +80,7 @@ public class SpanningTree {
         graph.addEdge(0, 1, 4);
         graph.addEdge(0, 7, 8);
         graph.addEdge(1, 2, 8);
-        graph.addEdge(1, 7, 11);
+        graph.addEdge(1, 7, 4);
         graph.addEdge(2, 3, 7);
         graph.addEdge(2, 5, 4);
         graph.addEdge(2, 8, 2);
