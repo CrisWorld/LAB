@@ -1,0 +1,5 @@
+views\TruckView.class
+controllers\GabageTruckController.class
+com\mycompany\gabagetruck\Validator.class
+models\TruckInterface.class
+models\GabageTruck.class
